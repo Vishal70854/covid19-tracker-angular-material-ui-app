@@ -67,3 +67,15 @@ install angular material
 ng add @angular/material
 ```
 
+----------------------------
+
+Covid19-Tracker Github repo : https://github.com/disease-sh/API?utm_source=chatgpt.com
+
+documentation link : https://disease.sh/docs/#/COVID-19%3A%20Worldometers/get_v3_covid_19_all
+
+we will be using below endpoint to get covid19 detailf countrywise
+
+link : https://disease.sh/v3/covid-19/countries
+
+
+

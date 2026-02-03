@@ -1,6 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 import { RouterOutlet } from '@angular/router';
+import { Covid19 } from './covid19/covid19';
 
 export interface PeriodicElement {
   name: string;
@@ -24,7 +25,7 @@ const ELEMENT_DATA: PeriodicElement[] = [
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, MatTableModule],
+  imports: [MatTableModule, Covid19],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

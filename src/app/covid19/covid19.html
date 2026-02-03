@@ -1,0 +1,103 @@
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Country -->
+  <ng-container matColumnDef="country">
+    <th mat-header-cell *matHeaderCellDef> Country </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.country }}
+    </td>
+  </ng-container>
+
+  <!-- Total Cases -->
+  <ng-container matColumnDef="cases">
+    <th mat-header-cell *matHeaderCellDef> Cases </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.cases }}
+    </td>
+  </ng-container>
+
+  <!-- Today Cases -->
+  <ng-container matColumnDef="todayCases">
+    <th mat-header-cell *matHeaderCellDef> Today Cases </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.todayCases }}
+    </td>
+  </ng-container>
+
+  <!-- Deaths -->
+  <ng-container matColumnDef="deaths">
+    <th mat-header-cell *matHeaderCellDef> Deaths </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.deaths }}
+    </td>
+  </ng-container>
+
+  <!-- Today Deaths -->
+  <ng-container matColumnDef="todayDeaths">
+    <th mat-header-cell *matHeaderCellDef> Today Deaths </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.todayDeaths }}
+    </td>
+  </ng-container>
+
+  <!-- Recovered -->
+  <ng-container matColumnDef="recovered">
+    <th mat-header-cell *matHeaderCellDef> Recovered </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.recovered }}
+    </td>
+  </ng-container>
+
+  <!-- Active -->
+  <ng-container matColumnDef="active">
+    <th mat-header-cell *matHeaderCellDef> Active </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.active }}
+    </td>
+  </ng-container>
+
+  <!-- Critical -->
+  <ng-container matColumnDef="critical">
+    <th mat-header-cell *matHeaderCellDef> Critical </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.critical }}
+    </td>
+  </ng-container>
+
+  <!-- Cases Per One Million -->
+  <ng-container matColumnDef="casesPerOneMillion">
+    <th mat-header-cell *matHeaderCellDef> Cases / 1M </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.casesPerOneMillion }}
+    </td>
+  </ng-container>
+
+  <!-- Deaths Per One Million -->
+  <ng-container matColumnDef="deathsPerOneMillion">
+    <th mat-header-cell *matHeaderCellDef> Deaths / 1M </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.deathsPerOneMillion }}
+    </td>
+  </ng-container>
+
+  <!-- Tests -->
+  <ng-container matColumnDef="tests">
+    <th mat-header-cell *matHeaderCellDef> Tests </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.tests }}
+    </td>
+  </ng-container>
+
+  <!-- Tests Per One Million -->
+  <ng-container matColumnDef="testsPerOneMillion">
+    <th mat-header-cell *matHeaderCellDef> Tests / 1M </th>
+    <td mat-cell *matCellDef="let element">
+      {{ element.testsPerOneMillion }}
+    </td>
+  </ng-container>
+
+  <!-- Header & Row Declarations -->
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+</table>
