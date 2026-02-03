@@ -3,10 +3,11 @@ import { JavatechieCovid19 } from '../javatechie-covid19';
 import { CountryReports } from '../../countryReports';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
+import { MatSort, MatSortModule } from '@angular/material/sort';
 
 @Component({
   selector: 'app-covid19',
-  imports: [MatTableModule, MatPaginatorModule],
+  imports: [MatTableModule, MatPaginatorModule, MatSortModule],
   templateUrl: './covid19.html',
   styleUrl: './covid19.css',
 })
@@ -29,13 +30,14 @@ export class Covid19 implements OnInit{
   ];
   dataSource = new MatTableDataSource<CountryReports>(this.ELEMENT_DATA);
 
-  @ViewChild(MatPaginator, {static: true}) paginator : MatPaginator | undefined;
+  @ViewChild(MatPaginator, {static: true}) paginator! : MatPaginator;
+  @ViewChild(MatSort, {static: true}) sort! : MatSort; // sort! means it will always have a non null value
 
   constructor(private service: JavatechieCovid19) {}
   ngOnInit(): void {
     this.getAllReports(); // on application load call this method and get all reports of covid patients country wise
     this.dataSource.paginator = this.paginator;
-
+    this.dataSource.sort = this.sort;
   }
 
   public getAllReports(){
