@@ -1,4 +1,13 @@
-<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+<div></div> <br>
+<mat-form-field appearance="outline" style="width: 100%;">
+  <mat-label>Filter countries</mat-label>
+  <input matInput
+    (keyup)="applyFilter($event.target.value)"
+    placeholder="Search (eg: India, USA, cases...)"/>
+</mat-form-field>
+
+<div class="mat-elevation-z8">
+<table mat-table [dataSource]="dataSource" matSort >
 
   <!-- Country -->
   <ng-container matColumnDef="country">
@@ -103,3 +112,4 @@
 </table>
 <!-- pagination -->
 <mat-paginator [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+</div>

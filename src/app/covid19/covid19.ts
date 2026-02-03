@@ -4,10 +4,18 @@ import { CountryReports } from '../../countryReports';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-covid19',
-  imports: [MatTableModule, MatPaginatorModule, MatSortModule],
+  imports: [
+    MatTableModule, 
+    MatPaginatorModule, 
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule
+  ],
   templateUrl: './covid19.html',
   styleUrl: './covid19.css',
 })
@@ -47,6 +55,9 @@ export class Covid19 implements OnInit{
     });
   }
 
-
+  // method to filter based on name of country
+  applyFilter(filterValue: string) {
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
 
 }
